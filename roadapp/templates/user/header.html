@@ -1,0 +1,292 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ROAD SIDE ASSISTANCE</title>
+
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Corp Active Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+
+	<link href="{% static 'assets/css/easy-responsive-tabs.css' %}" rel='stylesheet' type='text/css'/>
+
+	<!-- banner slider css file -->
+	<link href="{% static 'assets/css/JiSlider.css' %}" rel="stylesheet">
+	<!-- //banner slider css file -->
+
+	<!-- css files -->
+	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}"> <!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}" type="text/css" media="all" /> <!-- Style-CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.css' %}"> <!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+
+	<!-- //web-fonts -->
+	<script>
+		$(function(){
+		   var current = location.pathname;
+		   $('div a').each(function(){
+			   var $this = $(this);
+
+			   // if the current path is like this link, make it active
+			   if($this.attr('href').indexOf(current) !== -1){
+				   $this.addClass('active');
+				   ($(this).parent()).addClass('active');
+			   }
+		   })
+	   })
+	   </script>
+</head>
+
+<body>
+<!-- header -->
+<header>
+	<style>
+		.nav-item a,.nav-link{
+			text-transform: uppercase;
+		}
+
+	</style>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<a class="navbar-brand" href="#">
+				ROAD SIDE ASSISTANCE
+			</a>
+			<button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mx-auto text-center" >
+					<li class="nav-item active  mr-lg-3">
+						<a class="nav-link" href="/user_home/">Home
+
+						</a>
+					</li>
+                    <li class="nav-item dropdown mr-lg-3">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">
+							Spare Parts
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="/product/">Product</a>
+							<a class="dropdown-item" href="/Order_List/">Order List</a>
+
+						</div>
+					</li>
+
+                    <li class="nav-item dropdown mr-lg-3">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">
+							Service Request
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="/Add_service_details/">Add Service  Details</a>
+							<a class="dropdown-item" href="/service_details_list/">Service Request List </a>
+
+						</div>
+					</li>
+
+
+                    <li class="nav-item dropdown mr-lg-3">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">
+							 Complaints
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="/complaint/">Add Complaints</a>
+							<a class="dropdown-item" href="/Complaint_list/">View Reply</a> </a>
+
+						</div>
+					</li>
+					<li class="nav-item dropdown mr-lg-3">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">
+							Profile
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="/profile/">Profile</a>
+							<a class="dropdown-item" href="/change_password/">Change Password</a>
+
+						</div>
+					</li>
+                    <li class="nav-item   mr-lg-3">
+						<a class="nav-link" href="/user_logout/">Log Out
+
+						</a>
+					</li>
+				</ul>
+
+
+
+			</div>
+		</nav>
+	</div>
+</header>
+<section class="inner-page-banner">
+
+</section>
+<!-- inner page banner -->
+
+<!-- breadcrumb -->
+<ol class="breadcrumb">
+	<li class="breadcrumb-item">
+		<a href="#">Home</a>
+	</li>
+	<li class="breadcrumb-item active">User </li>
+</ol>
+
+{% block content %}{% endblock %}
+
+<section class="footer-top pt-5">
+
+</section>
+<section class="agile-footer middle w3ls-section">
+
+</section>
+<section class="copyright py-4">
+	<div class="agileits_w3layouts-copyright text-center">
+	ROAD SIDE ASSISTANCE
+	</div>
+</section>
+<!-- //footer -->
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- //Register modal -->
+
+<!-- js-scripts -->
+
+	<!-- js -->
+	<script type="text/javascript" src="{% static 'assets/js/jquery-2.1.4.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/js/bootstrap.js' %}"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+	<!-- //js -->
+
+	<!-- Banner Slider js script file-->
+		<script src="{% static 'assets/js/JiSlider.js' %}"></script>
+		<script>
+			$(window).load(function () {
+				$('#JiSlider').JiSlider({
+					color: '#fff',
+					start: 1,
+					reverse: false
+				}).addClass('ff')
+			})
+		</script>
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-36251023-1']);
+			_gaq.push(['_setDomainName', 'jqueryscript.net']);
+			_gaq.push(['_trackPageview']);
+
+			(function () {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+	<!-- //Banner Slider js script file-->
+
+	<!-- tabs -->
+	<script src="{% static 'assets/js/easy-responsive-tabs.js' %}"></script>
+	<script>
+	$(document).ready(function () {
+	$('#horizontalTab').easyResponsiveTabs({
+	type: 'default', //Types: default, vertical, accordion
+	width: 'auto', //auto or any width like 600px
+	fit: true,   // 100% fit in a container
+	closed: 'accordion', // Start closed if in accordion view
+	activate: function(event) { // Callback function if tab is switched
+	var $tab = $(this);
+	var $info = $('#tabInfo');
+	var $name = $('span', $info);
+	$name.text($tab.text());
+	$info.show();
+	}
+	});
+	$('#verticalTab').easyResponsiveTabs({
+	type: 'vertical',
+	width: 'auto',
+	fit: true
+	});
+	});
+	</script>
+	<!--//tabs-->
+
+	<!-- for-Testimonials -->
+	<!-- required-js-files-->
+	<link href="{% static 'assets/css/owl.carousel.css' %}" rel="stylesheet">
+		<script src="{% static 'assets/js/owl.carousel.js' %}"></script>
+			<script>
+		$(document).ready(function() {
+		  $("#owl-demo").owlCarousel({
+			items : 1,
+			lazyLoad : true,
+			autoPlay : true,
+			navigation : false,
+			navigationText :  false,
+			pagination : true,
+		  });
+		});
+		</script>
+	<!--//required-js-files-->
+	<!-- //for-Testimonials -->
+
+	<!-- start-smoth-scrolling -->
+	<script src="{% static 'assets/js/SmoothScroll.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/js/move-top.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/js/easing.js' %}"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+	</script>
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+			});
+	</script>
+	<!-- //here ends scrolling icon -->
+	<!-- start-smoth-scrolling -->
+
+<!-- //js-scripts -->
+
+</body>
+</html>

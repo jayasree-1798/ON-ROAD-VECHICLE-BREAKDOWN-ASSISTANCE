@@ -1,0 +1,54 @@
+
+{% extends "Master/header_adm.html" %}
+{% block content %}
+{% load static %}
+
+
+<div id="page-wrapper">
+    <div class="main-page">
+        <div class="forms">
+
+            <h3 class="title1">Product List</h3>
+
+            <div class="col-sm-12" style="margin-top: 10px;">
+    <div class="form-title">
+                    <h4>Product List :</h4>
+                </div>
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                  <div class="alert alert-success"> {{message }}</div>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+    <table class="table table-striped table-bordered">
+      <thead><th>Id</th><th>Product Name</th><th>Description</th><th>Features</th><th>Price</th><th>Quanitity</th><th>Image</th><th>Sub Category</th><th> Category</th><th>#</th></thead>
+
+      {%  for k in data  %}
+
+        <tr>
+
+
+          <td>{{forloop.counter}}</td>
+              <td>{{k.2}}</td>
+              <td>{{k.3}}</td>
+              <td>{{k.4}}</td>
+              <td>{{k.5}}</td>
+              <td>{{k.6}}</td>
+              <td><img src="{{k.8}}" width="100" height="80"></td>
+              <td>{{k.11}}</td>
+              <td>{{k.13}}</td>
+              <td><a href="/edit_product/{{k.0}}" class="btn btn-info">Edit</a></td>
+              <td><a href="/delete_product/{{k.0}}" onclick="return ConfirmDialog();" class="btn btn-danger">Delete</a></td>
+          </tr>
+
+          {% endfor  %}
+    </table>
+            </div>
+            <div class="row">
+
+        </div>
+    </div>
+</div>
+<!--footer-->
+{% endblock %}

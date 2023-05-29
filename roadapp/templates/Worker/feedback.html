@@ -1,0 +1,104 @@
+
+{% extends "Worker/header_adm.html" %}
+{% block content %}
+{% load static %}
+
+
+<div id="page-wrapper">
+    <div class="main-page">
+        <div class="forms">
+
+            <h3 class="title1">Message</h3>
+
+            <div class="col-sm-12" style="margin-top: 10px;">
+    <div class="form-title">
+                    <h4> Message to Workshop</h4>
+                </div>
+                {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                              <div class="alert alert-success"> {{message }}</div>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                            <form method="post" action="/save_feedback/" method="post" id="myform" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="col-sm-6">
+
+                                <div class="form-group">
+                                    <span><label>Message</label></span>
+                                   <span><textarea class="form-control" name="feedback"></textarea></span>
+                                  </div>
+
+                                  <div class="col-sm-12"  style="text-align: center;margin: 4px;"><div>
+                                    <span><input type="submit" value="Submit" class="btn btn-info"></span>
+                           </div></div>
+            </div>
+
+
+
+
+                            </form>
+
+</div>
+
+            <script src="{% static 'assets/Validation/jquery_validate.js' %}"></script>
+            <script src="{% static 'assets/Validation/additional_validate.js' %}"></script>
+            <script>
+
+            (function ($, W, D)
+            {
+            var JQUERY4U = {};
+            JQUERY4U.UTIL =
+            {
+            setupFormValidation: function ()
+            {
+            $.validator.addMethod(
+            "regex",
+            function(value, element, regexp) {
+            var check = false;
+            return this.optional(element) || regexp.test(value);
+            },
+            "Not a valid Input."
+            );
+
+            //form validation rules
+            $("#myform").validate({
+            ignore: [],
+            rules: {
+
+                feedback: {
+                      required: true,
+
+                    },
+
+
+                  },
+                  messages: {
+
+
+
+            },
+            errorPlacement: function(error, element) {
+                        error.appendTo( element.parent() );
+                    },
+            submitHandler: function (form) {
+            form.submit();
+            }
+            });
+            }
+            }
+            //when the dom has loaded setup form validation rules
+            $(D).ready(function ($) {
+            JQUERY4U.UTIL.setupFormValidation();
+            });
+            })(jQuery, window, document);
+            </script>
+            </div>
+            <div class="row">
+
+        </div>
+    </div>
+</div>
+<!--footer-->
+{% endblock %}

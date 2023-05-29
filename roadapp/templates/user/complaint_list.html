@@ -1,0 +1,41 @@
+{% extends "user/header.html" %}
+{% block content %}
+{% load static %}
+
+<section class="about py-5">
+    <h3 style="text-align: center;" class="heading text-uppercase">Complaint List</h3>
+	<div class="container-fluid py-lg-5 py-3">
+		<div class="row about_grids">
+            <div class="col-sm-3" ></div>
+            <div class="col-sm-6" >
+                {% if data %}
+                <table class="table table-striped table-bordered">
+<thead class="alert-danger"><th>Id</th><th>Complaint</th><th>Reply</th></thead>
+
+                    {%  for k in data  %}
+
+                      <tr>
+
+
+                            <td>{{forloop.counter}}</td>
+                            <td>{{k.complaint}}</td>
+                            <td>{{k.reply}}</td>
+
+
+
+
+                        </tr>
+
+                        {% endfor  %}
+                        {% else %}
+                        <div class="alert alert-success"> No List Available</div>
+                        {% endif %}
+
+</table>
+
+            </div>
+            <div class="col-sm-3" ></div>
+		</div>
+	</div>
+</section>
+{% endblock %}

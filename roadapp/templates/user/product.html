@@ -1,0 +1,46 @@
+{% extends "user/header.html" %}
+{% block content %}
+{% load static %}
+<style>
+      .title{
+        font-size: 16px;
+        font-weight:bold;
+        color: brown;
+      }
+      .des,.feat{
+        font-size: 13px;
+text-align: justify;
+margin-top: 4px;
+
+      }
+</style>
+<section class="about py-5">
+      {% if messages %}
+      <ul class="messages">
+          {% for message in messages %}
+        <div class="alert alert-success"> {{message }}</div>
+          {% endfor %}
+      </ul>
+      {% endif %}
+	<div class="container-fluid py-lg-5 py-3">
+		<div class="row about_grids">
+            {% if data %}
+            {%  for k in data  %}
+<div class="col-sm-4">
+<div class="title">{{k.2}}</div>
+<div style="width:30%"><img src="{{k.8}}"  height="130"></div>
+<div class="des"><b>Description:</b>{{k.3}}</div>
+<div class="feat"><b>Features: </b>{{k.4}}</div>
+<div class="price"><b>Price: </b>Rs. {{k.5}} /-</div>
+<div class="qty"><b>Stock: </b>{{k.6}}</div>
+<div ><a href="/buy_now/{{k.0}}" class="btn btn-info">Buy Now </a></b></div>
+</div>
+            {% endfor  %}
+
+            {% else %}
+            <div class="alert alert-success"> No List Available</div>
+            {% endif %}
+		</div>
+	</div>
+</section>
+{% endblock %}

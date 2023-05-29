@@ -1,0 +1,38 @@
+{% extends "user/header.html" %}
+{% block content %}
+{% load static %}
+
+<section class="about py-5">
+    <h3 style="text-align: center;" class="heading text-uppercase">Profile</h3>
+	<div class="container-fluid py-lg-5 py-3">
+		<div class="row about_grids">
+            {% if data1 %}
+            <table class="table table-striped table-bordered">
+
+
+                {%  for k in data1  %}
+
+                  <tr>
+
+
+                      <th>Client Name</th>  <td>{{k.name}}</td></tr>
+
+                      <th>Phone</th>  <td>{{k.phone_number}}</td></tr>
+                      <th>Address</th> <td>{{k.Address }}   </td></tr>
+                      <th>Mail Id</th> <td>{{k.Email }}   </td></tr>
+                      <th>Place</th> <td>{{k.place }}   </td></tr>
+
+
+
+                    </tr>
+
+                    {% endfor  %}
+                    {% else %}
+                    <div class="alert alert-success"> No List Available</div>
+                    {% endif %}
+
+              </table>
+		</div>
+	</div>
+</section>
+{% endblock %}

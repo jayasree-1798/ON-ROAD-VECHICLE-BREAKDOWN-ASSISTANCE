@@ -1,0 +1,505 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Road Side Assistance</title>
+
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Corp Active Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+
+	<link href="{% static 'assets/css/easy-responsive-tabs.css' %}" rel='stylesheet' type='text/css'/>
+
+	<!-- banner slider css file -->
+	<link href="{% static 'assets/css/JiSlider.css' %}" rel="stylesheet">
+	<!-- //banner slider css file -->
+
+	<!-- css files -->
+	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}"> <!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}" type="text/css" media="all" /> <!-- Style-CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.css' %}"> <!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+
+	<!-- //web-fonts -->
+
+</head>
+
+<body>
+<!-- header -->
+<header>
+	<style>
+		.nav-item a,.nav-link{
+			text-transform: uppercase;
+		}
+
+	</style>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<a class="navbar-brand" href="#"  style="text-transform: uppercase; font-size: 30px;">
+				<i class="fas fa-car"></i>Road Side Assistance
+			</a>
+			<button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mx-auto text-center">
+					<li class="nav-item active  mr-lg-3">
+						<a class="nav-link" href="/index/">Home
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item   mr-lg-3">
+						<a class="nav-link" href="/work_shop_registration/">Workshop Registration
+
+						</a>
+					</li>
+
+				</ul>
+
+
+			</div>
+		</nav>
+	</div>
+</header>
+<section class="inner-page-banner">
+
+</section>
+<!-- inner page banner -->
+
+<!-- breadcrumb -->
+<ol class="breadcrumb">
+	<li class="breadcrumb-item">
+		<a href="#">Home</a>
+	</li>
+	<li class="breadcrumb-item active">Workshop Registration </li>
+</ol>
+
+<section class="about py-5">
+    <h3 style="text-align: center;" class="heading text-uppercase">Workshop Registration</h3>
+	<div class="container-fluid py-lg-5 py-3">
+		<div class="row about_grids">
+
+            <div class="col-sm-12" >
+				{% if messages %}
+				<ul class="messages">
+					{% for message in messages %}
+				  <div class="alert alert-success"> {{message }}</div>
+					{% endfor %}
+				</ul>
+				{% endif %}
+				<form method="post" action="/save_workshop/" method="post" id="myform1">
+					{% csrf_token %}
+					<div class="row">
+					<div class="col-sm-6">
+					<div class="form-group">
+						<label>Workshop Name</label>
+						<input type="text" name="name" placeholder="Name"  class="form-control">
+					</div>
+					<div class="form-group">
+						<label>Address</label>
+					<textarea name="address" class="form-control"></textarea>
+					</div>
+					<div class="form-group">
+						<label>Owner Name</label>
+						<input class="form-control" type="text" name="ownername" >
+					</div>
+					<div class="form-group">
+						<label>Email </label>
+						<input  type="text" class="form-control" name="email" >
+					</div>
+					<div class="form-group">
+						<label>Phone Number</label>
+						<input class="form-control" type="text" name="phone_number" >
+					</div>
+
+					</div>
+					 <div class="col-sm-6">
+
+
+
+
+
+
+								<div class="form-group"> <label for="">State</label>
+									<select name="state"  id="state" class="form-control">
+										<option value="">--Select--</option>
+										{%  for k in data  %}
+										<option value="{{k.state_id}}">{{k.state}}</option>
+										{% endfor  %}
+									</select> </div>
+							<div class="form-group"> <label for="">District</label>
+								<select name="district" id="district" class="form-control">
+									<option value="">--Select--</option>
+
+								</select> </div>
+
+								<div class="form-group">
+									<label>Place</label>
+									<input class="form-control" type="text" name="place" >
+								</div>
+
+						<div>
+							<label>User Name</label>
+						   <input name="username" id="id_username"  type="text" class="form-control">
+						  <span id="cb"></span>
+					  </div>
+
+					  <div>
+						<label>Password</label>
+					   <input name="password" type="password" id="password" class="form-control">
+				  </div>
+				  <div>
+					<label>Confirm Password</label>
+				   <input name="cpassword" type="password" class="form-control">
+			  </div>
+					</div>
+					<div class="col-sm-12" style="text-align: center; margin: 5px;">
+						<input type="submit" value="Submit" class="btn btn-info">
+					</div>
+				</div>
+
+				</form>
+				<script src="{% static 'assets/Validation/jquery-1.11.1.min.js' %}"></script>
+				<script src="{% static 'assets/Validation/jquery_validate.js' %}"></script>
+				<script src="{% static 'assets/Validation/additional_validate.js' %}"></script>
+<script>
+(function ($, W, D)
+{
+var JQUERY4U = {};
+JQUERY4U.UTIL =
+{
+  setupFormValidation: function ()
+  {
+	$.validator.addMethod(
+"regex",
+function(value, element, regexp) {
+var check = false;
+return this.optional(element) || regexp.test(value);
+},
+"Not a valid Input."
+);
+
+  //form validation rules
+  $("#myform1").validate({
+	ignore: [],
+	rules: {
+						name: {
+						  required: true,
+						  regex : /^[A-Za-z ]+$/,
+						  minlength: 3,
+
+						},
+						country: {
+						  required: true,
+
+
+						},
+						state: {
+						  required: true,
+
+
+						},
+						district: {
+						  required: true,
+
+
+						},
+						place: {
+						  required: true,
+						  regex : /^[A-Za-z ]+$/,
+
+						},
+						phone_number: {
+							required: true,
+							digits:true,
+							   minlength: 10,
+							   maxlength: 10,
+							   regex : /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[6789]\d{9}$/
+						},
+						address: {
+						  required: true,
+						  minlength: 3,
+
+						},
+						ownername: {
+						  required: true,
+						  minlength: 3,
+						  regex : /^[A-Za-z ]+$/,
+						},
+
+						email: {
+						 required: true,
+						 regex :  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+
+						},
+						username: {
+							required: true,
+							regex : /^[A-Za-z0-9@]+$/,
+							minlength: 5,
+							maxlength: 15,
+
+						},
+						password: {
+							required: true,
+							 regex : /^[A-Za-z0-9@#*]+$/,
+							 minlength: 5,
+							maxlength: 15,
+
+						},
+						cpassword: {
+							required: true,
+							   regex : /^[A-Za-z0-9@#*]+$/,
+							   minlength: 5,
+							  maxlength: 15,
+						  equalTo: "#password"
+
+						},
+						uname: {
+							required: true,
+
+
+						},
+					  },
+					  messages: {
+
+						phone: "Please Enter Valid 10 digit Phone Number - Starting from 6, 7 or 8 or 9",
+
+		  username: "Please Enter Valid User Name(5-15 digit alphanumeric username",
+			password: "Please Enter Valid Password Name(5-15 digit alphanumeric  password  and @#* also allowed",
+			   cpassword: "Please Enter Valid Password Name(5-15 digit alphanumeric confirm password and same as above password and @#* also allowed",
+			   uname:"User name is not available",
+	  },
+	  submitHandler: function (form) {
+	  form.submit();
+	  }
+  });
+}
+}
+//when the dom has loaded setup form validation rules
+$(D).ready(function ($) {
+JQUERY4U.UTIL.setupFormValidation();
+});
+})(jQuery, window, document);
+</script>
+			 <script>
+			  $("#state").change(function () {
+					var state = $(this).val();
+
+					$.ajax({
+
+						  url: '/display_district/',
+						  data: {
+							  'state_id': state
+						  },
+						  dataType: 'json',
+						  success: function (data) {
+
+
+							 let html_data = '<option value="">--Select--</option>';
+	 data.forEach(function (data) {
+		 html_data += `<option value="${data.district_id}">${data.district}</option>`
+	 });
+	 $("#district").html(html_data);
+
+
+
+						  }
+					});
+
+				 });</script>
+				  <script>
+						$("#id_username").keyup(function () {
+							$('#uname').val("");
+						   var username = $(this).val();
+						   var count = username.length;
+						   $('#cb').html("");
+						   if(count>4)
+						  {
+						   $.ajax({
+								 url: '/check_username/',
+								 data: {
+									 'username': username
+								 },
+								 dataType: 'json',
+								 success: function (data) {
+									  if (data.username_exists) {
+
+
+										$('#cb').css('color','red');
+									$('#cb').html(data.error);
+
+									  }
+									  else{
+
+										$('#cb').css('color','green');
+									$('#cb').html(data.success);
+									$('#uname').val(1);
+									  }
+								 }
+						   });
+						}
+						});
+					 </script>
+
+            </div>
+            <div class="col-sm-3" ></div>
+		</div>
+	</div>
+</section>
+
+<section class="footer-top pt-5">
+
+</section>
+<section class="agile-footer middle w3ls-section">
+
+</section>
+<section class="copyright py-4">
+	<div class="agileits_w3layouts-copyright text-center">
+		<p>Road Side Assistance
+
+		</p>
+	</div>
+</section>
+<!-- //footer -->
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- //Register modal -->
+
+<!-- js-scripts -->
+
+	<!-- js -->
+	<script type="text/javascript" src="{% static 'assets/js/jquery-2.1.4.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/js/bootstrap.js' %}"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+	<!-- //js -->
+
+	<!-- Banner Slider js script file-->
+		<script src="{% static 'assets/js/JiSlider.js' %}"></script>
+		<script>
+			$(window).load(function () {
+				$('#JiSlider').JiSlider({
+					color: '#fff',
+					start: 1,
+					reverse: false
+				}).addClass('ff')
+			})
+		</script>
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-36251023-1']);
+			_gaq.push(['_setDomainName', 'jqueryscript.net']);
+			_gaq.push(['_trackPageview']);
+
+			(function () {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+	<!-- //Banner Slider js script file-->
+
+	<!-- tabs -->
+	<script src="{% static 'assets/js/easy-responsive-tabs.js' %}"></script>
+	<script>
+	$(document).ready(function () {
+	$('#horizontalTab').easyResponsiveTabs({
+	type: 'default', //Types: default, vertical, accordion
+	width: 'auto', //auto or any width like 600px
+	fit: true,   // 100% fit in a container
+	closed: 'accordion', // Start closed if in accordion view
+	activate: function(event) { // Callback function if tab is switched
+	var $tab = $(this);
+	var $info = $('#tabInfo');
+	var $name = $('span', $info);
+	$name.text($tab.text());
+	$info.show();
+	}
+	});
+	$('#verticalTab').easyResponsiveTabs({
+	type: 'vertical',
+	width: 'auto',
+	fit: true
+	});
+	});
+	</script>
+	<!--//tabs-->
+
+	<!-- for-Testimonials -->
+	<!-- required-js-files-->
+	<link href="{% static 'assets/css/owl.carousel.css' %}" rel="stylesheet">
+		<script src="{% static 'assets/js/owl.carousel.js' %}"></script>
+			<script>
+		$(document).ready(function() {
+		  $("#owl-demo").owlCarousel({
+			items : 1,
+			lazyLoad : true,
+			autoPlay : true,
+			navigation : false,
+			navigationText :  false,
+			pagination : true,
+		  });
+		});
+		</script>
+	<!--//required-js-files-->
+	<!-- //for-Testimonials -->
+
+	<!-- start-smoth-scrolling -->
+	<script src="{% static 'assets/js/SmoothScroll.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/js/move-top.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/js/easing.js' %}"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+	</script>
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+			});
+	</script>
+	<!-- //here ends scrolling icon -->
+	<!-- start-smoth-scrolling -->
+
+<!-- //js-scripts -->
+
+</body>
+</html>
